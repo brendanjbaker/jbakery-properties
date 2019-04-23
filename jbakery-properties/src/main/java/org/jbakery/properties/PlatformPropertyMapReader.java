@@ -10,13 +10,13 @@ public class PlatformPropertyMapReader
 	implements PropertyMapReader
 {
 	@Override
-	public Map<String, String> read(InputStream inputStream)
+	public Map<String, String> read(final InputStream inputStream)
 	{
 		Argument.notNull(inputStream, "inputStream");
 
 		try
 		{
-			var properties = new java.util.Properties();
+			final var properties = new java.util.Properties();
 
 			properties.load(inputStream);
 
@@ -28,7 +28,7 @@ public class PlatformPropertyMapReader
 						property -> property.getKey().toString(),
 						property -> property.getValue().toString()));
 		}
-		catch (IOException ioe)
+		catch (final IOException ioe)
 		{
 			throw new RuntimeException(ioe);
 		}

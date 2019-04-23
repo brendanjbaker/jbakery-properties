@@ -5,7 +5,7 @@ import org.jbakery.arguments.Argument;
 public class PropertyNotFoundException
 	extends RuntimeException
 {
-	public PropertyNotFoundException(String propertyName)
+	public PropertyNotFoundException(final String propertyName)
 	{
 		super(String.format("Property \"%s\" not found.", Argument.notNull(propertyName, "propertyName")));
 	}

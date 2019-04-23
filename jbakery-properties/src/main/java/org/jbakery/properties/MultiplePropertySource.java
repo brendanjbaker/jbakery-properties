@@ -11,7 +11,7 @@ public class MultiplePropertySource
 {
 	private final PropertySource[] propertySources;
 
-	public MultiplePropertySource(PropertySource... propertySources)
+	public MultiplePropertySource(final PropertySource... propertySources)
 	{
 		this.propertySources = Argument.notNull(propertySources, "propertySources");
 	}

@@ -9,7 +9,7 @@ public class ExceptionSuppressingPropertySource
 {
 	private final PropertySource propertySource;
 
-	public ExceptionSuppressingPropertySource(PropertySource propertySource)
+	public ExceptionSuppressingPropertySource(final PropertySource propertySource)
 	{
 		this.propertySource = Argument.notNull(propertySource, "propertySource");
 	}
@@ -21,7 +21,7 @@ public class ExceptionSuppressingPropertySource
 		{
 			return propertySource.toMap();
 		}
-		catch (Exception e)
+		catch (final Exception e)
 		{
 			return Collections.emptyMap();
 		}

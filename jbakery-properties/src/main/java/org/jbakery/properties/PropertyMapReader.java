@@ -5,5 +5,5 @@ import java.util.Map;
 
 public interface PropertyMapReader
 {
-	Map<String, String> read(InputStream inputStream);
+	Map<String, String> read(final InputStream inputStream);
 }
