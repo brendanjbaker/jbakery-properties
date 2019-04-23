@@ -10,7 +10,7 @@ public class InputStreamPropertySource
 	private final InputStream inputStream;
 	private final PropertyMapReader propertyMapReader;
 
-	public InputStreamPropertySource(InputStream inputStream, PropertyMapReader propertyMapReader)
+	public InputStreamPropertySource(final InputStream inputStream, final PropertyMapReader propertyMapReader)
 	{
 		this.inputStream = Argument.notNull(inputStream, "inputStream");
 		this.propertyMapReader = Argument.notNull(propertyMapReader, "propertyMapReader");

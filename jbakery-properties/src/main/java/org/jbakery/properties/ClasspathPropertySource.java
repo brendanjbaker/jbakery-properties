@@ -10,7 +10,7 @@ public class ClasspathPropertySource
 	private final String path;
 	private final PropertyMapReader propertyMapReader;
 
-	public ClasspathPropertySource(String path, PropertyMapReader propertyMapReader)
+	public ClasspathPropertySource(final String path, final PropertyMapReader propertyMapReader)
 	{
 		this.path = Argument.notNull(path, "path");
 		this.propertyMapReader = Argument.notNull(propertyMapReader, "propertyMapReader");
@@ -19,11 +19,11 @@ public class ClasspathPropertySource
 	@Override
 	public Map<String, String> toMap()
 	{
-		try (var inputStream = this.getClass().getResourceAsStream(path))
+		try (final var inputStream = this.getClass().getResourceAsStream(path))
 		{
 			return propertyMapReader.read(inputStream);
 		}
-		catch (IOException ioe)
+		catch (final IOException ioe)
 		{
 			throw new RuntimeException(ioe);
 		}

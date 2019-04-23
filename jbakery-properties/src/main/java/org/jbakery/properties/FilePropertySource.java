@@ -11,7 +11,7 @@ public class FilePropertySource
 	private final String path;
 	private final PropertyMapReader propertyMapReader;
 
-	public FilePropertySource(String path, PropertyMapReader propertyMapReader)
+	public FilePropertySource(final String path, final PropertyMapReader propertyMapReader)
 	{
 		this.path = Argument.notNull(path, "path");
 		this.propertyMapReader = Argument.notNull(propertyMapReader, "propertyMapReader");
@@ -20,11 +20,11 @@ public class FilePropertySource
 	@Override
 	public Map<String, String> toMap()
 	{
-		try (var inputStream = new FileInputStream(path))
+		try (final var inputStream = new FileInputStream(path))
 		{
 			return propertyMapReader.read(inputStream);
 		}
-		catch (IOException ioe)
+		catch (final IOException ioe)
 		{
 			throw new RuntimeException(ioe);
 		}

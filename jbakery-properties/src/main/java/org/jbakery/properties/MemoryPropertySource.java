@@ -8,7 +8,7 @@ public class MemoryPropertySource
 {
 	private final Map<String, String> propertiesMap;
 
-	public MemoryPropertySource(Map<String, String> propertiesMap)
+	public MemoryPropertySource(final Map<String, String> propertiesMap)
 	{
 		this.propertiesMap = Argument.notNull(propertiesMap, "propertiesMap");
 	}

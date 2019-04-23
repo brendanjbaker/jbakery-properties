@@ -10,7 +10,7 @@ public class CachingPropertySource
 	private final PropertySource propertySource;
 	private final Cache<PropertySource> propertySourceCache;
 
-	public CachingPropertySource(Cache<PropertySource> propertySourceCache, PropertySource propertySource)
+	public CachingPropertySource(final Cache<PropertySource> propertySourceCache, final PropertySource propertySource)
 	{
 		this.propertySource = Argument.notNull(propertySource, "propertySource");
 		this.propertySourceCache = Argument.notNull(propertySourceCache, "propertySourceCache");
@@ -19,12 +19,12 @@ public class CachingPropertySource
 	@Override
 	public Map<String, String> toMap()
 	{
-		var cachedPropertySource = propertySourceCache.tryGet();
+		final var cachedPropertySource = propertySourceCache.tryGet();
 
 		if (cachedPropertySource != null)
 			return cachedPropertySource.toMap();
 
-		var propertyMap = propertySource.toMap();
+		final var propertyMap = propertySource.toMap();
 
 		propertySourceCache.set(propertySource);
 
