@@ -27,6 +27,7 @@ public class MultiplePropertySource
 			.collect(
 				Collectors.toMap(
 					property -> property.getKey(),
-					property -> property.getValue()));
+					property -> property.getValue(),
+					MergeStrategy::first));
 	}
 }
