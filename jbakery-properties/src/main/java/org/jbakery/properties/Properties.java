@@ -31,6 +31,16 @@ public class Properties
 		return read(propertyName);
 	}
 
+	public String[] getStrings(final String propertyName)
+	{
+		final var value = read(propertyName);
+
+		if (value.isEmpty())
+			return new String[0];
+
+		return value.split(",");
+	}
+
 	public String read(final String propertyName)
 	{
 		Argument.notNull(propertyName, "propertyName");
